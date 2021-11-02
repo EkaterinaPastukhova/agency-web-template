@@ -1,0 +1,48 @@
+.box {
+    background: black;
+    padding: 40px;
+}
+
+.box .title {
+    color: green;
+}
+
+.box.small {
+    padding: 20px;
+}
+
+.col .box {
+    margin-top: 20px;
+}
+
+.box:hover::before {
+    color:red;
+}
+
+/* -- SAME BUT USING SCSS -- */
+
+.box {
+    background: black;
+    padding: 40px;
+
+    &:hover::before {
+        color:red;
+    }
+
+    &.small {
+        padding: 20px;
+    }
+
+    .title {
+        color: green
+    }
+
+    /* 
+        TRY TO AVOID THE NEXT ONE WHEN POSSIBLE 
+        it's not that readable and also a bit messy
+    */
+
+    .col & {
+        margin-top: 20px;
+    }
+}
